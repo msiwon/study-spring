@@ -1,0 +1,15 @@
+<!doctype html>
+<html xml:th="http:www.thymeleaf.org"><!--이것도 설정해준거-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html"><!--이거 설정해준거임-->
+    <title>Document</title>
+</head>
+<body>
+<p th:text="'안녕하세요. '+ ${data}">안녕하세요. 손님</p>
+<p th:text="'근데 이거 차이가 뭐냐 '+${imsi}">이건 왜 안나올까여 alt값인가?</p>
+<!--컨트롤러에서 넘어옴 ${모델 키값 호출(키값네임)} -->
+</body>
+</html>
