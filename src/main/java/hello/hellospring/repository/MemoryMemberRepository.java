@@ -1,8 +1,11 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+//@Repository //스프링에 인식시켜주...는 방법도 있습니다
+//SpringConfig 에서 스프링 빈 연결
 
 public class MemoryMemberRepository implements MemberRepository{
 //처음 implements 하면 alt + enter 해서 한번에 생성할 수 있다 (밑에 override 들)
