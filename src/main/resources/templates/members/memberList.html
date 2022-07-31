@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--본격적으로 thymeleaf 작동-->
+<body>
+<div class="container">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody><!--랜더링-->
+            <tr th:each="member : ${members}">
+                <!--model 안의 member 를 꺼내옴 List 라 루프로 실행되겠죠-->
+                <td th:text="${member.id}"></td><!--id 랑 name 보면 게터세터로 돼있음-->
+                <td th:text="${member.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

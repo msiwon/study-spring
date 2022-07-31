@@ -1,0 +1,20 @@
+<!DOCTYPE HTML> <!--회원 가입 누르면 이 페이지로 이동-->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <!--값을 입력할 수 있는 html 태그 form-->
+    <form action="/members/new" method="post">
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name"
+                   placeholder="이름을 입력하세요">
+            <!--name 이 서버로 넘어올때의 key-->
+        </div>
+        <button type="submit">등록</button>
+        <!--버튼 누르면 form 의 action 주소로 method 방식으로 넘어감
+        이 페이지에선 /members/new 로 post 방식으로 넘어감
+        memberController 에 PostMapping 되어있음-->
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
