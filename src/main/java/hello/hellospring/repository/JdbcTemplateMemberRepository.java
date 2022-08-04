@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-//JdbcTemplate 반복코드를 제거해줌 but SQL 은 직접 작성해줘야함
+//JdbcTemplate 반복코드를 제거해줌 but SQL 은 직접 작성해줘야함 -> JPA 로 보완
 //repository 만들때 memberRepository 인터페이스 만들어둔거 쓰면 된다 (잊지마!)
 
 public class JdbcTemplateMemberRepository implements MemberRepository {

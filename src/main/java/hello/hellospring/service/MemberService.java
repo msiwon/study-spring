@@ -5,14 +5,16 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service //스프링에게 인식시켜주기위해 -> 컴포넌트 스캔 (스트링 빈 생성)
+//@Service //스프링에게 인식시켜주기위해 -> 컴포넌트 스캔 (스트링 빈 생성)
 /*
 컴포넌트 스캔 말고 직접 등록도 할 수 있다 - SpringConfig 으로...
 */
+@Transactional //jpa 위해 설정
 public class MemberService {
     //검증을 위한 test case 자동 생성 (껍데기) -> ctrl + shift + T
 
@@ -20,7 +22,7 @@ public class MemberService {
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
     //원래 위처럼 repository 를 따로 만들었는데 한 인스턴스로 사용하기위해 바꿈
     private final MemberRepository memberRepository;
-    @Autowired //의존관계 주입시켜줌 (연결)
+    //@Autowired //의존관계 주입시켜줌 (연결)
     public MemberService(MemberRepository memberRepository) {
         //외부에서 repository 를 받아오도록 설정
         this.memberRepository = memberRepository;
@@ -32,6 +34,7 @@ public class MemberService {
      * 회원가입
      */
     public Long join(Member member) {
+
         validateDuplicateMember(member);//중복 회원 검증
         memberRepository.save(member);//save 에 저장 
         return member.getId();//id 반환

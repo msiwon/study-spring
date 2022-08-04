@@ -34,7 +34,7 @@ class MemberServiceIntegrationTest {
     //AfterEach 랑 BeforeEach 가 필요가 없어짐
 
     @Test
-    public void 회원가입() throws Exception {
+    void 회원가입(){
 
         //given:이런 상황이 주어져서
         Member member = new Member();
@@ -44,8 +44,8 @@ class MemberServiceIntegrationTest {
         Long saveId = memberService.join(member); //조인
 
         //then
-        Member findMember = memberRepository.findById(saveId).get();
-        assertEquals(member.getName(), findMember.getName());
+        Member findMember = memberService.findOne(saveId).get();
+        assertThat(member.getName()).isEqualTo(findMember.getName());
 
     }
 
