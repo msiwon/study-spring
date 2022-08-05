@@ -1,6 +1,7 @@
 package hello.hellospring.service;
 
 //컴포넌트 스캔 사용하지 않고 자바 코드로 직접 스프링 빈 등록하기...의 클래스
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,12 @@ public class SpringConfig {
     }스프링 데이터 jpa 쓰니까 순식간에...
 */
     //컨트롤러는 x
+
+    //AOP 스프링빈 등록 ...컴포넌트로 해줘서 밑은 주석처리함
+    /* @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
+    }
+     */
 }
 

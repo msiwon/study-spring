@@ -36,8 +36,9 @@ public class MemberService {
     public Long join(Member member) {
 
         validateDuplicateMember(member);//중복 회원 검증
-        memberRepository.save(member);//save 에 저장 
+        memberRepository.save(member);//save 에 저장
         return member.getId();//id 반환
+
     }
 
     //같은 이름은 안된다는 룰 지정했을 때 를 가정하여 만든
